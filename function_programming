@@ -1,0 +1,102 @@
+Q1. Write a Python Program to find sum of array?
+Ans:-
+Here we have written function below to find the sum of array as below.
+def arrey_sum(arr):
+    sum=0
+    for num in arr:
+        sum += num
+    return sum
+
+
+arrey=input("enter your element of arreys (space_saparated): ").split()
+arrey=[int(num) for num in arrey]
+result=arrey_sum(arrey)
+print(f"the sum of the arrey is {result}")
+# for example if the user enters 1 2 3 4 5, the program will calculate the sum as 1 + 2 + 3 + 4 + 5 = 15 and display the result as The sum of the array is: 15.
+
+Q2. Write a Python Program to find largest element in an array?
+Ans:-
+here we have written function to find the largest element in the array as below
+def find_largest_array(arr):
+    if len(arr) == 0:
+        return None
+    largest=arr[0]
+    for num in arr:
+        if num > largest:
+            largest=num
+    return largest
+array=input("enter your element of arreys (space_saparated): ").split()
+array=[int(num) for num in array]
+largest_array=find_largest_array(array)
+
+
+if largest_array is None:
+    print("the array is empty")
+else:
+    print(f"the largest element in the array is {largest_array}")
+
+# If the user enters 12 45 3 27 8, the program will find the largest element as 45 and display the result as The largest element in the array is: 45
+
+
+Q3.  Write a Python Program for array rotation?
+Ans:-
+Here we have written functio below to rotate array as below.
+
+def rotate_array(arr,k):
+    n=len(arr)
+    k%=n   #to normalize the k if it is large than n.
+    rotated_array=array[k:]+array[:k]
+    return rotated_array
+
+array=input("enter the element of the array(space_saparated): ").split()
+array=[int(num) for num in array]
+
+k=int(input("enter the number of rotation"))
+
+rotated_array=rotate_array(array,k)
+print(f"rotated array {rotated_array}")
+# if the user enters 1 2 3 4 5 as the array and 2 as the number of rotations, the program will perform the rotation and display the result as Array after rotation: [3, 4, 5, 1, 2]
+
+Q4. Write a Python Program to Split the array and add the first part to the end?
+Ans:-
+Here we have written below function to split and add function to split a array and add it to end as below.
+
+def split_and_add(arr,k):
+    n=len(arr)
+    k%=n      # to normalize the k if large than n
+    split_arr=arr[k:]+arr[:k]
+    return split_arr
+
+array=input("enter the element of array (space_saparated): ").split()
+array=[int(num) for num in array]
+
+k=int(input("enter the number of element to split"))
+
+result_array=split_and_add(array,k)
+print(f"this is splited and added array {result_array}")
+
+# f the user enters 1 2 3 4 5 as the array and 2 as the number of elements to split, the program will perform the operation and display the result as Array after splitting and adding: [3, 4, 5, 1, 2]
+
+Q5. Write a Python Program to check if given array is Monotonic?
+Ans:-
+here we have written function to read and identify the array if it is monotonic array or not.
+def is_monotonis(arr):
+    increasing=decreasing=True
+    for i in range(1, len(arr)):
+        if arr[i]<arr[i-1]:
+            increasing=False
+        if arr[i] > arr[i-1]:
+            decreasing=False
+    return increasing or decreasing
+array=input("enter your element of array(space_saparated)").split()
+array=[int(num) for num in array]
+
+result=is_monotonis(array)
+
+if result:
+    print("this is monotonic array")
+else:
+    print("this is not monotonic array")
+    
+#if the user enters 1 2 3 4 5 as the array, the program will determine that the array is monotonic and display the result as The array is monotonic.
+
